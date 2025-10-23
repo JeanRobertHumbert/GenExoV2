@@ -1,0 +1,32 @@
+{
+    "meta"  : {
+        "title"                 : "Devoir Commun N°1 TSTMG",
+        "source"                : "GenExoV2",
+        "dateOfExam"            : "03/11/2025",
+        "points"                : 43,
+        "bonus"                 : 2,
+        "duree"                 : "1 heure",
+        "consignes"           : [
+            "La calculatrice n'est pas autorisée",
+            "Le téléphone n’est pas autorisé, même comme calculatrice",
+            "Le bonus est accordé selon la qualité de la rédaction et du soin"
+        ],  
+        "classe"                : "TSTMG1",
+        "CSVfile"               : null,
+        "nbAnonymous"           : 1
+    },
+    "exercices": [
+            { "name": "exoTableauEvolution", "repeat": 1 },
+            { "name": "addClearPage", "repeat": 1 },
+            { "name": "evolSchema2", "repeat": 1 },
+            { "name": "addClearPage", "repeat": 1 },
+            { "name": "exoP1Type4", "repeat": 1 },
+            { "name": "exoP1Type5", "repeat": 1 },
+            { "name": "exoP1Type6", "repeat": 1 },
+            { "name": "exoP1Type7", "repeat": 1 },
+            { "name": "exoP1Type8", "repeat": 1 },
+            { "name": "exoP1Type9", "repeat": 1 },
+            { "name": "exoP1Type10", "repeat": 1 },
+            { "name": "exoProportion", "repeat": 1 }
+    ]
+}

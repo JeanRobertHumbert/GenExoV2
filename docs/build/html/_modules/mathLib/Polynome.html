@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mathLib.Polynome &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for mathLib.Polynome</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Polynome">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome">[docs]</a>
+<span></span><span class="k">class</span><span class="w"> </span><span class="nc">Polynome</span><span class="p">:</span>
+<div class="viewcode-block" id="Polynome.__init__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__init__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">coefficients</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize a polynomial with given coefficients.</span>
+<span class="sd">        Coefficients should be a list where the i-th element represents the coefficient for x^i.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            coefficients (list of float): Coefficients of the polynomial.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            p = Polynome([1, 0, -2])  # Represents the polynomial 1 - 2x^2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span> <span class="o">=</span> <span class="n">coefficients</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_leading_zeros</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_remove_leading_zeros</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Remove leading zeros from the coefficients list to maintain the correct degree.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Polynome.__repr__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__repr__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return a string representation of the polynomial.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">terms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">coef</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">term</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">coef</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">term</span> <span class="o">+=</span> <span class="s2">&quot;x&quot;</span>
+            <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">term</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;x^</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">&quot; + &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">terms</span><span class="p">))</span> <span class="k">if</span> <span class="n">terms</span> <span class="k">else</span> <span class="s2">&quot;0&quot;</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__add__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__add__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add two polynomials or a polynomial and a scalar.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Polynome or float): The polynomial or scalar to add.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The resulting polynomial after addition.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p1 = Polynome([1, 2])  # 1 + 2x</span>
+<span class="sd">                p2 = Polynome([3, 4])  # 3 + 4x</span>
+<span class="sd">                p3 = p1 + p2          # 4 + 6x</span>
+<span class="sd">                p4 = p1 + 5           # 6 + 2x</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Polynome</span><span class="p">):</span>
+            <span class="n">max_deg</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">))</span>
+            <span class="n">new_coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">max_deg</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)):</span>
+                <span class="n">new_coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)):</span>
+                <span class="n">new_coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">new_coeffs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="n">new_coeffs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[:]</span>
+            <span class="n">new_coeffs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="n">other</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">new_coeffs</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for +: &#39;Polynome&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__sub__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__sub__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subtract two polynomials or a polynomial and a scalar.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Polynome or float): The polynomial or scalar to subtract.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The resulting polynomial after subtraction.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            p1 = Polynome([1, 2])  # 1 + 2x</span>
+<span class="sd">            p2 = Polynome([3, 4])  # 3 + 4x</span>
+<span class="sd">            p3 = p1 - p2          # -2 - 2x</span>
+<span class="sd">            p4 = p1 - 5           # -4 + 2x</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Polynome</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">self</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="n">other</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for -: &#39;Polynome&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__neg__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__neg__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Negate the polynomial.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The negated polynomial.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2</span>
+<span class="sd">            neg_p = -p                # -1 + 2x - 3x^2</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Polynome</span><span class="p">([</span><span class="o">-</span><span class="n">coef</span> <span class="k">for</span> <span class="n">coef</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__mul__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__mul__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Multiply two polynomials or a polynomial and a scalar.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Polynome or float): The polynomial or scalar to multiply.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The resulting polynomial after multiplication.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p1 = Polynome([1, 2])  # 1 + 2x</span>
+<span class="sd">                p2 = Polynome([3, 4])  # 3 + 4x</span>
+<span class="sd">                p3 = p1 * p2          # 3 + 10x + 8x^2</span>
+<span class="sd">                p4 = p1 * 5           # 5 + 10x</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Polynome</span><span class="p">):</span>
+            <span class="n">new_coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coef1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">coef2</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">):</span>
+                    <span class="n">new_coeffs</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">coef1</span> <span class="o">*</span> <span class="n">coef2</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">new_coeffs</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">([</span><span class="n">coef</span> <span class="o">*</span> <span class="n">other</span> <span class="k">for</span> <span class="n">coef</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for *: &#39;Polynome&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__truediv__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__truediv__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Divide two polynomials or a polynomial by a scalar.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Polynome or float): The polynomial or scalar to divide by.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The resulting polynomial after division.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p1 = Polynome([1, -2, 3])  # 1 - 2x + 3x^2</span>
+<span class="sd">                p2 = Polynome([1, -1])     # 1 - x</span>
+<span class="sd">                quotient, remainder = p1 / p2  # Quotient and remainder of the division</span>
+<span class="sd">                p3 = p1 / 2                # (0.5 - x + 1.5x^2)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Polynome</span><span class="p">):</span>
+            <span class="n">dividend</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[:]</span>
+            <span class="n">divisor</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">coefficients</span><span class="p">[:]</span>
+            <span class="k">if</span> <span class="n">divisor</span> <span class="o">==</span> <span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;division by zero polynomial&quot;</span><span class="p">)</span>
+            <span class="n">quotient</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dividend</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">dividend</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">divisor</span><span class="p">):</span>
+                <span class="n">lead_coeff_ratio</span> <span class="o">=</span> <span class="n">dividend</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">divisor</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">degree_diff</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dividend</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">divisor</span><span class="p">)</span>
+                <span class="n">quotient</span><span class="p">[</span><span class="n">degree_diff</span><span class="p">]</span> <span class="o">=</span> <span class="n">lead_coeff_ratio</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">divisor</span><span class="p">)):</span>
+                    <span class="n">dividend</span><span class="p">[</span><span class="n">degree_diff</span> <span class="o">+</span> <span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">divisor</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">lead_coeff_ratio</span>
+                <span class="k">while</span> <span class="n">dividend</span> <span class="ow">and</span> <span class="n">dividend</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">dividend</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">quotient</span><span class="p">),</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">dividend</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">([</span><span class="n">coef</span> <span class="o">/</span> <span class="n">other</span> <span class="k">for</span> <span class="n">coef</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for /: &#39;Polynome&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Polynome.__eq__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.__eq__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if two polynomials are equal.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Polynome or float): The polynomial or scalar to compare.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if equal, False otherwise.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p1 = Polynome([1, 2])  # 1 + 2x</span>
+<span class="sd">                p2 = Polynome([1, 2])  # 1 + 2x</span>
+<span class="sd">                p3 = Polynome([2, 3])  # 2 + 3x</span>
+<span class="sd">                print(p1 == p2)  # True</span>
+<span class="sd">                print(p1 == p3)  # False</span>
+<span class="sd">                print(p1 == 1)   # False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Polynome</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">coefficients</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span> <span class="o">==</span> <span class="p">[</span><span class="n">other</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Polynome.evaluate">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.evaluate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Evaluate the polynomial at a given value of x.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            x (float): The value at which to evaluate the polynomial.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: The result of the polynomial evaluation.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2</span>
+<span class="sd">            result = p.evaluate(2)    # 1 - 4 + 12 = 9</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">coef</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">**</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Polynome.derivative">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Polynome.Polynome.derivative">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">derivative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Compute the derivative of the polynomial.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Polynome: The derivative polynomial.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2</span>
+<span class="sd">                dp = p.derivative()       # -2 + 6x</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">new_coeffs</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">coef</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coef</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">coefficients</span><span class="p">)][</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="k">return</span> <span class="n">Polynome</span><span class="p">(</span><span class="n">new_coeffs</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Allow the polynomial to be called as a function to evaluate it.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            x (float): The value at which to evaluate the polynomial.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: The result of the polynomial evaluation.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2</span>
+<span class="sd">                result = p(2)             # 1 - 4 + 12 = 9</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Exemple d&#39;utilisation</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># 1 - 2x + 3x^2</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 4x - x^2</span>
+
+    <span class="c1"># Affichage</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polynôme p1:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>  <span class="c1"># 3x^2 - 2x + 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Polynôme p2:&quot;</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># -x^2 + 4x</span>
+
+    <span class="c1"># Addition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition:&quot;</span><span class="p">,</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># 2x^2 + 2x + 1</span>
+
+    <span class="c1"># Soustraction</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soustraction:&quot;</span><span class="p">,</span> <span class="n">p1</span> <span class="o">-</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># 4x^2 - 6x + 1</span>
+
+    <span class="c1"># Multiplication</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication:&quot;</span><span class="p">,</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># -3x^4 + 10x^3 - 11x^2 + 4x</span>
+
+    <span class="c1"># Division</span>
+    <span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">/</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Divise p1 par (x - 1)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Quotient:&quot;</span><span class="p">,</span> <span class="n">quotient</span><span class="p">)</span>  <span class="c1"># 3x + 1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Reste:&quot;</span><span class="p">,</span> <span class="n">remainder</span><span class="p">)</span>  <span class="c1"># 4</span>
+
+    <span class="c1"># Dérivée</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dérivée de p1:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="o">.</span><span class="n">derivative</span><span class="p">())</span>  <span class="c1"># 6x - 2</span>
+
+    <span class="c1"># Évaluation</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Évaluation de p1 en x=2:&quot;</span><span class="p">,</span> <span class="n">p1</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>  <span class="c1"># 1 - 4 + 12 = 9</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathLib.html">mathLib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

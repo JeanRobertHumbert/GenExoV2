@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mathLib.Complexe &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for mathLib.Complexe</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Module for complex number operations.</span>
+<span class="sd">Provides a Complexe class with methods for addition, subtraction,</span>
+<span class="sd">multiplication, division, conjugation, modulus, and argument calculation.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="Complexe">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Complexe</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class representing a complex number.</span>
+<span class="sd">    Attributes:</span>
+<span class="sd">        real (float): The real part of the complex number.</span>
+<span class="sd">        imag (float): The imaginary part of the complex number.</span>
+<span class="sd">    </span>
+<span class="sd">    Methods:</span>
+<span class="sd">        __add__(self, other): Addition of two complex numbers.</span>
+<span class="sd">        __sub__(self, other): Subtraction of two complex numbers.</span>
+<span class="sd">        __mul__(self, other): Multiplication of two complex numbers.</span>
+<span class="sd">        __truediv__(self, other): Division of two complex numbers.</span>
+<span class="sd">        conjugate(self): Returns the conjugate of the complex number.</span>
+<span class="sd">        modulus(self): Returns the modulus of the complex number.</span>
+<span class="sd">        argument(self): Returns the argument of the complex number in radians.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">real</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">imag</span><span class="p">:</span> <span class="nb">float</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">=</span> <span class="n">real</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">=</span> <span class="n">imag</span>
+    
+<div class="viewcode-block" id="Complexe.__add__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__add__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Addition of two complex numbers.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Complexe or float): The complex number or real number to add.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Complexe: The result of the addition.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z1 = Complexe(1, 2)</span>
+<span class="sd">                z2 = Complexe(3, 4)</span>
+<span class="sd">                z3 = z1 + z2  # z3 is Complexe(4, 6)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Complexe</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">+</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for +: &#39;Complexe&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__sub__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__sub__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subtraction of two complex numbers.</span>
+<span class="sd">         Args:</span>
+<span class="sd">            other (Complexe or float): The complex number or real number to subtract.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            Complexe: The result of the subtraction.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z1 = Complexe(3, 4)</span>
+<span class="sd">                z2 = Complexe(1, 2)</span>
+<span class="sd">                z3 = z1 - z2  # z3 is Complexe(2, 2)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Complexe</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">-</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for -: &#39;Complexe&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__mul__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__mul__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Multiplication of two complex numbers.</span>
+<span class="sd">         Args: </span>
+<span class="sd">            other (Complexe or float): The complex number or real number to multiply.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            Complexe: The result of the multiplication.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z1 = Complexe(1, 2)</span>
+<span class="sd">                z2 = Complexe(3, 4)</span>
+<span class="sd">                z3 = z1 * z2  # z3 is Complexe(-5, 10)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Complexe</span><span class="p">):</span>
+            <span class="n">real_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span>
+            <span class="n">imag_part</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="n">real_part</span><span class="p">,</span> <span class="n">imag_part</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">other</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for *: &#39;Complexe&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__truediv__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__truediv__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__truediv__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Division of two complex numbers.</span>
+<span class="sd">         Args:</span>
+<span class="sd">            other (Complexe or float): The complex number or real number to divide by.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            Complexe: The result of the division.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z1 = Complexe(1, 2)</span>
+<span class="sd">                z2 = Complexe(3, 4)</span>
+<span class="sd">                z3 = z1 / z2  # z3 is Complexe(0.44, 0.08)</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            ZeroDivisionError: If division by zero occurs.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Complexe</span><span class="p">):</span>
+            <span class="n">denom</span> <span class="o">=</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span><span class="o">**</span><span class="mi">2</span>
+            <span class="k">if</span> <span class="n">denom</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+            <span class="n">real_part</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+            <span class="n">imag_part</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="o">/</span> <span class="n">denom</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="n">real_part</span><span class="p">,</span> <span class="n">imag_part</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">other</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ZeroDivisionError</span><span class="p">(</span><span class="s2">&quot;division by zero&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">/</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">/</span> <span class="n">other</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported operand type(s) for /: &#39;Complexe&#39; and &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">other</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__neg__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__neg__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__neg__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Negation of the complex number.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            Complexe: The negated complex number.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z = Complexe(1, -2)</span>
+<span class="sd">                neg_z = -z  # neg_z is Complexe(-1, 2)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__eq__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__eq__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Equality check between two complex numbers.</span>
+<span class="sd">         Args:</span>
+<span class="sd">            other (Complexe or float): The complex number or real number to compare.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            bool: True if equal, False otherwise.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z1 = Complexe(1, 2)</span>
+<span class="sd">                z2 = Complexe(1, 2)</span>
+<span class="sd">                z3 = Complexe(2, 3)</span>
+<span class="sd">                print(z1 == z2)  # True</span>
+<span class="sd">                print(z1 == z3)  # False</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Complexe</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">real</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">imag</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span> <span class="o">==</span> <span class="n">other</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">==</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Complexe.conjugate">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.conjugate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">conjugate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the conjugate of the complex number.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            Complexe: The conjugate of the complex number.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z = Complexe(3, 4)</span>
+<span class="sd">                conj_z = z.conjugate()  # conj_z is Complexe(3, -4)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Complexe</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.modulus">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.modulus">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">modulus</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the modulus of the complex number.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            float: The modulus of the complex number.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z = Complexe(3, 4)</span>
+<span class="sd">                mod_z = z.modulus()  # mod_z is 5.0</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.argument">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.argument">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">argument</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Returns the argument of the complex number in radians.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            float: The argument of the complex number in radians.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z = Complexe(1, 1)</span>
+<span class="sd">                arg_z = z.argument()  # arg_z is 0.7853981633974483 (π/4)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Complexe.__repr__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__repr__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        String representation of the complex number.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            str: The string representation of the complex number.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                z = Complexe(3, -4)</span>
+<span class="sd">                print(repr(z))  # &quot;3 - 4i&quot;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sign</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">imag</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;-&#39;</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">real</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">sign</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="nb">abs</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="si">}</span><span class="s2">i&quot;</span></div>
+
+
+    <span class="c1"># For convenience, allow complex representation in string form</span>
+<div class="viewcode-block" id="Complexe.__str__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Complexe.Complexe.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        String representation of the complex number.</span>
+<span class="sd">         Returns:</span>
+<span class="sd">            str: The string representation of the complex number.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example usage of the Complexe class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Addition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Addition:&quot;</span><span class="p">,</span> <span class="n">z1</span> <span class="o">+</span> <span class="n">z2</span><span class="p">)</span>  <span class="c1"># 4 + 2i</span>
+    <span class="c1"># Soustraction</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Soustraction:&quot;</span><span class="p">,</span> <span class="n">z1</span> <span class="o">-</span> <span class="n">z2</span><span class="p">)</span>  <span class="c1"># 2 + 6i</span>
+    <span class="c1"># Multiplication</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Multiplication:&quot;</span><span class="p">,</span> <span class="n">z1</span> <span class="o">*</span> <span class="n">z2</span><span class="p">)</span>  <span class="c1"># 11 + 2i</span>
+    <span class="c1"># Division</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Division:&quot;</span><span class="p">,</span> <span class="n">z1</span> <span class="o">/</span> <span class="n">z2</span><span class="p">)</span>  <span class="c1"># -1.4 + 1.8i</span>
+    <span class="c1"># Conjugaison</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Conjugaison:&quot;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">conjugate</span><span class="p">())</span>  <span class="c1"># 3 - 4i</span>
+    <span class="c1"># Module</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Module:&quot;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">modulus</span><span class="p">())</span>  <span class="c1"># 5.0</span>
+    <span class="c1"># Argument</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Argument (en radians):&quot;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">argument</span><span class="p">())</span>  <span class="c1"># 0.9272952180016122 (~53.13°)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathLib.html">mathLib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

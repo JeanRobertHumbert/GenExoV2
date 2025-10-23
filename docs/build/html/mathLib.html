@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>mathLib package &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="GenExoV2" href="modules.html" />
+    <link rel="prev" title="exoTSTMG module" href="exoTSTMG.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mathlib-package">
+<h1>mathLib package<a class="headerlink" href="#mathlib-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-mathLib.Complexe">
+<span id="mathlib-complexe-module"></span><h2>mathLib.Complexe module<a class="headerlink" href="#module-mathLib.Complexe" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Complexe.</span></span><span class="sig-name descname"><span class="pre">Complexe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">real</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imag</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class representing a complex number.
+.. attribute:: real</p>
+<blockquote>
+<div><p>The real part of the complex number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>real</strong> (<em>float</em>)</p></li>
+<li><p><strong>imag</strong> (<em>float</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.imag">
+<span class="sig-name descname"><span class="pre">imag</span></span><a class="headerlink" href="#mathLib.Complexe.Complexe.imag" title="Link to this definition">¶</a></dt>
+<dd><p>The imaginary part of the complex number.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__add__" title="Link to this definition">¶</a></dt>
+<dd><p>Addition of two complex numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__sub__" title="Link to this definition">¶</a></dt>
+<dd><p>Subtraction of two complex numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__mul__" title="Link to this definition">¶</a></dt>
+<dd><p>Multiplication of two complex numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__truediv__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__truediv__" title="Link to this definition">¶</a></dt>
+<dd><p>Division of two complex numbers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.conjugate">
+<span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.conjugate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.conjugate" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the conjugate of the complex number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.modulus">
+<span class="sig-name descname"><span class="pre">modulus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.modulus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.modulus" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the modulus of the complex number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.argument">
+<span class="sig-name descname"><span class="pre">argument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.argument" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the argument of the complex number in radians.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>Addition of two complex numbers.
+:param other: The complex number or real number to add.
+:type other: Complexe or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the addition.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Complexe.Complexe" title="mathLib.Complexe.Complexe">Complexe</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">+</span> <span class="n">z2</span>  <span class="c1"># z3 is Complexe(4, 6)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__eq__" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Equality check between two complex numbers.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>other (Complexe or float): The complex number or real number to compare.</p>
+</dd>
+<dt>Returns:</dt><dd><p>bool: True if equal, False otherwise.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z1</span> <span class="o">==</span> <span class="n">z2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z1</span> <span class="o">==</span> <span class="n">z3</span><span class="p">)</span>  <span class="c1"># False</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Multiplication of two complex numbers.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>other (Complexe or float): The complex number or real number to multiply.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Complexe: The result of the multiplication.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">*</span> <span class="n">z2</span>  <span class="c1"># z3 is Complexe(-5, 10)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__neg__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__neg__" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Negation of the complex number.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>Complexe: The negated complex number.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">neg_z</span> <span class="o">=</span> <span class="o">-</span><span class="n">z</span>  <span class="c1"># neg_z is Complexe(-1, 2)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__repr__" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>String representation of the complex number.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>str: The string representation of the complex number.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>  <span class="c1"># &quot;3 - 4i&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Complexe.Complexe.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Complexe.Complexe.__str__" title="Link to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>String representation of the complex number.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>str: The string representation of the complex number.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Subtraction of two complex numbers.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>other (Complexe or float): The complex number or real number to subtract.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Complexe: The result of the subtraction.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">-</span> <span class="n">z2</span>  <span class="c1"># z3 is Complexe(2, 2)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.__truediv__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Division of two complex numbers.</dt><dd><dl class="simple">
+<dt>Args:</dt><dd><p>other (Complexe or float): The complex number or real number to divide by.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Complexe: The result of the division.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="n">z1</span> <span class="o">/</span> <span class="n">z2</span>  <span class="c1"># z3 is Complexe(0.44, 0.08)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ZeroDivisionError</strong> – If division by zero occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">argument</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.argument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Returns the argument of the complex number in radians.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>float: The argument of the complex number in radians.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">arg_z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">argument</span><span class="p">()</span>  <span class="c1"># arg_z is 0.7853981633974483 (π/4)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<span class="sig-name descname"><span class="pre">conjugate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.conjugate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Returns the conjugate of the complex number.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>Complexe: The conjugate of the complex number.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">conj_z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>  <span class="c1"># conj_z is Complexe(3, -4)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">modulus</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Complexe.html#Complexe.modulus"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Returns the modulus of the complex number.</dt><dd><dl class="simple">
+<dt>Returns:</dt><dd><p>float: The modulus of the complex number.</p>
+</dd>
+</dl>
+</dd>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">Complexe</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">mod_z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">modulus</span><span class="p">()</span>  <span class="c1"># mod_z is 5.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Fonction">
+<span id="mathlib-fonction-module"></span><h2>mathLib.Fonction module<a class="headerlink" href="#module-mathLib.Fonction" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Fonction.</span></span><span class="sig-name descname"><span class="pre">Fonction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'x'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__add__" title="Link to this definition">¶</a></dt>
+<dd><p>Add two functions or a function and a scalar.
+:param other: The function or scalar to add.
+:type other: Fonction or int or float</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Returns:</dt><dd><p>Fonction: New Fonction instance representing the sum.</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x - 1&quot;</span><span class="p">)</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>  <span class="c1"># Output: x**2 + 4*x + 1</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If the other operand is not a Fonction or a scalar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__mul__" title="Link to this definition">¶</a></dt>
+<dd><p>Multiply two functions or a function and a scalar.
+:param other: The function or scalar to multiply.
+:type other: Fonction or int or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New Fonction instance representing the product.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Fonction.Fonction" title="mathLib.Fonction.Fonction">Fonction</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x - 1&quot;</span><span class="p">)</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">*</span> <span class="n">f2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>  <span class="c1"># Output: x**3 + 2*x**2 - x - 2</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If the other operand is not a Fonction or a scalar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__neg__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__neg__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the negation of the function.
+:returns: New Fonction instance representing the negated function.
+:rtype: Fonction</p>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="o">-</span><span class="n">f1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>  <span class="c1"># Output: -x**2 - 3*x - 2</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Returns a string representation of the Fonction instance.
+:returns: String representation of the Fonction instance.
+:rtype: str</p>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">repr</span><span class="p">(</span><span class="n">f1</span><span class="p">))</span>  <span class="c1"># Output: Fonction(x**2 + 3*x + 2)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__sub__" title="Link to this definition">¶</a></dt>
+<dd><p>Subtract two functions or a function and a scalar.
+:param other: The function or scalar to subtract.
+:type other: Fonction or int or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New Fonction instance representing the difference.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Fonction.Fonction" title="mathLib.Fonction.Fonction">Fonction</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x - 1&quot;</span><span class="p">)</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">-</span> <span class="n">f2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>  <span class="c1"># Output: x**2 + 2*x + 3</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If the other operand is not a Fonction or a scalar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.__truediv__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.__truediv__" title="Link to this definition">¶</a></dt>
+<dd><p>Divide two functions or a function by a scalar.
+:param other: The function or scalar to divide by.
+:type other: Fonction or int or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>New Fonction instance representing the quotient.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Fonction.Fonction" title="mathLib.Fonction.Fonction">Fonction</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x - 1&quot;</span><span class="p">)</span>
+<span class="n">f3</span> <span class="o">=</span> <span class="n">f1</span> <span class="o">/</span> <span class="n">f2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f3</span><span class="p">)</span>  <span class="c1"># Output: (x**2 + 3*x + 2) / (x - 1)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If the other operand is not a Fonction or a scalar.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.derivative">
+<span class="sig-name descname"><span class="pre">derivative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.derivative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.derivative" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the derivative of the function.
+:returns: New Fonction instance representing the derivative.
+:rtype: Fonction</p>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">derivative</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>  <span class="c1"># Output: 2*x + 3</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.evaluate" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluates the function at a given value.
+:param value: The value at which to evaluate the function.
+:type value: int or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the evaluation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># Output: 12.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Fonction.Fonction.integral">
+<span class="sig-name descname"><span class="pre">integral</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Fonction.html#Fonction.integral"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Fonction.Fonction.integral" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the integral of the function.
+:returns: New Fonction instance representing the integral.
+:rtype: Fonction</p>
+<dl>
+<dt>Usage :</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">Fonction</span><span class="p">(</span><span class="s2">&quot;x**2 + 3*x + 2&quot;</span><span class="p">)</span>
+<span class="n">f2</span> <span class="o">=</span> <span class="n">f1</span><span class="o">.</span><span class="n">integral</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>  <span class="c1"># Output: (x**3)/3 + (3*x**2)/2 + 2*x</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Matrice">
+<span id="mathlib-matrice-module"></span><h2>mathLib.Matrice module<a class="headerlink" href="#module-mathLib.Matrice" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Matrice.</span></span><span class="sig-name descname"><span class="pre">Matrice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class for matrix operations including addition, subtraction,
+multiplication, transposition, and determinant calculation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.__add__" title="Link to this definition">¶</a></dt>
+<dd><p>Add two matrices.
+:param other: The matrix to add.
+:type other: Matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting matrix after addition.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the operand is not a Matrice instance.</p></li>
+<li><p><strong>ValueError</strong> – If the dimensions of the matrices do not match.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.__mul__" title="Link to this definition">¶</a></dt>
+<dd><p>Multiply matrix by a scalar or another matrix.
+:param other: The scalar or matrix to multiply with.
+:type other: int, float, Matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting matrix after multiplication.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the operand is not a scalar or Matrice instance.</p></li>
+<li><p><strong>ValueError</strong> – If the dimensions are not compatible for matrix multiplication.</p></li>
+</ul>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">A</span> <span class="o">*</span> <span class="n">B</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.__sub__" title="Link to this definition">¶</a></dt>
+<dd><p>Subtract two matrices.
+:param other: The matrix to subtract.
+:type other: Matrice</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting matrix after subtraction.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TypeError</strong> – If the operand is not a Matrice instance.</p></li>
+<li><p><strong>ValueError</strong> – If the dimensions of the matrices do not match.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>A = Matrice([[5, 6], [7, 8]])
+B = Matrice([[1, 2], [3, 4]])
+C = A - B</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.determinant">
+<span class="sig-name descname"><span class="pre">determinant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.determinant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.determinant" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the determinant of the matrix.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The determinant of the matrix.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the matrix is not square.</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">det</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">determinant</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.identity">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.identity" title="Link to this definition">¶</a></dt>
+<dd><p>Create an identity matrix of given size.
+:param size: Size of the identity matrix (size x size).
+:type size: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An identity matrix of specified size.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.is_identity">
+<span class="sig-name descname"><span class="pre">is_identity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.is_identity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.is_identity" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the matrix is an identity matrix.
+:returns: True if the matrix is an identity matrix, False otherwise.
+:rtype: bool</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">I</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">is_identity</span><span class="p">())</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.is_square">
+<span class="sig-name descname"><span class="pre">is_square</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.is_square"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.is_square" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the matrix is square.
+:returns: True if the matrix is square, False otherwise.
+:rtype: bool</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">is_square</span><span class="p">())</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.is_zero">
+<span class="sig-name descname"><span class="pre">is_zero</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.is_zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.is_zero" title="Link to this definition">¶</a></dt>
+<dd><p>Check if the matrix is a zero matrix.
+:returns: True if the matrix is a zero matrix, False otherwise.
+:rtype: bool</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">is_zero</span><span class="p">())</span>  <span class="c1"># True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.transpose">
+<span class="sig-name descname"><span class="pre">transpose</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.transpose"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.transpose" title="Link to this definition">¶</a></dt>
+<dd><p>Transpose the matrix.
+:param None:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The transposed matrix.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Matrice.Matrice.zero">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zero</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rows</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cols</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Matrice.html#Matrice.zero"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Matrice.Matrice.zero" title="Link to this definition">¶</a></dt>
+<dd><p>Create a zero matrix of given dimensions.
+:param rows: Number of rows.
+:type rows: int
+:param cols: Number of columns.
+:type cols: int</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A zero matrix of specified dimensions.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Matrice.Matrice" title="mathLib.Matrice.Matrice">Matrice</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Z</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.PCA">
+<span id="mathlib-pca-module"></span><h2>mathLib.PCA module<a class="headerlink" href="#module-mathLib.PCA" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.PCA.</span></span><span class="sig-name descname"><span class="pre">PCA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Principal Component Analysis (PCA) implementation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize PCA with the number of components to keep.
+:param n_components: Number of principal components to retain.
+:type n_components: int</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.explained_variance">
+<span class="sig-name descname"><span class="pre">explained_variance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.explained_variance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.explained_variance" title="Link to this definition">¶</a></dt>
+<dd><p>Return the explained variance (eigenvalues).
+:returns: Explained variance for each principal component.
+:rtype: numpy.ndarray</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.explained_variance_ratio">
+<span class="sig-name descname"><span class="pre">explained_variance_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.explained_variance_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.explained_variance_ratio" title="Link to this definition">¶</a></dt>
+<dd><p>Return the explained variance ratio.
+:returns: Explained variance ratio for each principal component.
+:rtype: numpy.ndarray</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ratio</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.fit" title="Link to this definition">¶</a></dt>
+<dd><p>Fit the PCA model to the data X.
+:param X: Input data of shape (n_samples, n_features).
+:type X: numpy.ndarray</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.fit_transform">
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.fit_transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.fit_transform" title="Link to this definition">¶</a></dt>
+<dd><p>Fit the PCA model to the data X and transform it.
+:param X: Input data of shape (n_samples, n_features).
+:type X: numpy.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Transformed data of shape (n_samples, n_components).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.plot_cov_matrix">
+<span class="sig-name descname"><span class="pre">plot_cov_matrix</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.plot_cov_matrix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.plot_cov_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the covariance matrix.
+Usage:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">.</span><span class="n">plot_cov_matrix</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.plot_cumulative_explained_variance_ratio">
+<span class="sig-name descname"><span class="pre">plot_cumulative_explained_variance_ratio</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.plot_cumulative_explained_variance_ratio"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.plot_cumulative_explained_variance_ratio" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the cumulative explained variance ratio.
+Usage:</p>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">.</span><span class="n">plot_cumulative_explained_variance_ratio</span><span class="p">()</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.PCA.PCA.transform">
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/PCA.html#PCA.transform"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.PCA.PCA.transform" title="Link to this definition">¶</a></dt>
+<dd><p>Transform the data X to the principal component space.
+:param X: Input data of shape (n_samples, n_features).
+:type X: numpy.ndarray</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Transformed data of shape (n_samples, n_components).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>numpy.ndarray</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X_pca</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Point">
+<span id="mathlib-point-module"></span><h2>mathLib.Point module<a class="headerlink" href="#module-mathLib.Point" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Point.Point">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Point.</span></span><span class="sig-name descname"><span class="pre">Point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nom</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Point.html#Point"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Point.Point" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Point.Point.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Point.html#Point.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Point.Point.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Polynome">
+<span id="mathlib-polynome-module"></span><h2>mathLib.Polynome module<a class="headerlink" href="#module-mathLib.Polynome" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Polynome.</span></span><span class="sig-name descname"><span class="pre">Polynome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__add__" title="Link to this definition">¶</a></dt>
+<dd><p>Add two polynomials or a polynomial and a scalar.
+:param other: The polynomial or scalar to add.
+:type other: Polynome or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting polynomial after addition.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Polynome.Polynome" title="mathLib.Polynome.Polynome">Polynome</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 1 + 2x</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># 3 + 4x</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="n">p2</span>          <span class="c1"># 4 + 6x</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">+</span> <span class="mi">5</span>           <span class="c1"># 6 + 2x</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__eq__" title="Link to this definition">¶</a></dt>
+<dd><p>Check if two polynomials are equal.
+:param other: The polynomial or scalar to compare.
+:type other: Polynome or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if equal, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 1 + 2x</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 1 + 2x</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># 2 + 3x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>  <span class="c1"># True</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p3</span><span class="p">)</span>  <span class="c1"># False</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># False</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coefficients</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a polynomial with given coefficients.
+Coefficients should be a list where the i-th element represents the coefficient for x^i.
+:param coefficients: Coefficients of the polynomial.
+:type coefficients: list of float</p>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>p = Polynome([1, 0, -2])  # Represents the polynomial 1 - 2x^2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__mul__" title="Link to this definition">¶</a></dt>
+<dd><p>Multiply two polynomials or a polynomial and a scalar.
+:param other: The polynomial or scalar to multiply.
+:type other: Polynome or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting polynomial after multiplication.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Polynome.Polynome" title="mathLib.Polynome.Polynome">Polynome</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>  <span class="c1"># 1 + 2x</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>  <span class="c1"># 3 + 4x</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">*</span> <span class="n">p2</span>          <span class="c1"># 3 + 10x + 8x^2</span>
+<span class="n">p4</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">*</span> <span class="mi">5</span>           <span class="c1"># 5 + 10x</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__neg__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__neg__" title="Link to this definition">¶</a></dt>
+<dd><p>Negate the polynomial.
+:returns: The negated polynomial.
+:rtype: Polynome</p>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2
+neg_p = -p                # -1 + 2x - 3x^2</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return a string representation of the polynomial.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__sub__" title="Link to this definition">¶</a></dt>
+<dd><p>Subtract two polynomials or a polynomial and a scalar.
+:param other: The polynomial or scalar to subtract.
+:type other: Polynome or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting polynomial after subtraction.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Polynome.Polynome" title="mathLib.Polynome.Polynome">Polynome</a></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>p1 = Polynome([1, 2])  # 1 + 2x
+p2 = Polynome([3, 4])  # 3 + 4x
+p3 = p1 - p2          # -2 - 2x
+p4 = p1 - 5           # -4 + 2x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.__truediv__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.__truediv__" title="Link to this definition">¶</a></dt>
+<dd><p>Divide two polynomials or a polynomial by a scalar.
+:param other: The polynomial or scalar to divide by.
+:type other: Polynome or float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting polynomial after division.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Polynome.Polynome" title="mathLib.Polynome.Polynome">Polynome</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># 1 - 2x + 3x^2</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">])</span>     <span class="c1"># 1 - x</span>
+<span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">/</span> <span class="n">p2</span>  <span class="c1"># Quotient and remainder of the division</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">p1</span> <span class="o">/</span> <span class="mi">2</span>                <span class="c1"># (0.5 - x + 1.5x^2)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.derivative">
+<span class="sig-name descname"><span class="pre">derivative</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.derivative"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.derivative" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the derivative of the polynomial.
+:returns: The derivative polynomial.
+:rtype: Polynome</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Polynome</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>  <span class="c1"># 1 - 2x + 3x^2</span>
+<span class="n">dp</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">derivative</span><span class="p">()</span>       <span class="c1"># -2 + 6x</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Polynome.Polynome.evaluate">
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Polynome.html#Polynome.evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Polynome.Polynome.evaluate" title="Link to this definition">¶</a></dt>
+<dd><p>Evaluate the polynomial at a given value of x.
+:param x: The value at which to evaluate the polynomial.
+:type x: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The result of the polynomial evaluation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>p = Polynome([1, -2, 3])  # 1 - 2x + 3x^2
+result = p.evaluate(2)    # 1 - 4 + 12 = 9</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Suite">
+<span id="mathlib-suite-module"></span><h2>mathLib.Suite module<a class="headerlink" href="#module-mathLib.Suite" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Suite.Suite">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Suite.</span></span><span class="sig-name descname"><span class="pre">Suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Suite.html#Suite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Suite.Suite" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Suite.Suite.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'n'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurrence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Suite.html#Suite.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Suite.Suite.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialise une suite mathématique.
+:param expression: Expression explicite (par exemple, ‘n**2 + 1’).
+:param variable: Nom de la variable (par défaut ‘n’).
+:param recurrence: Fonction lambda pour la récurrence (par exemple, lambda u, n: u + 2).
+:param u0: Valeur initiale pour les suites définies par récurrence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Suite.Suite.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Suite.html#Suite.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Suite.Suite.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Suite.Suite.sum">
+<span class="sig-name descname"><span class="pre">sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Suite.html#Suite.sum"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Suite.Suite.sum" title="Link to this definition">¶</a></dt>
+<dd><p>Calcule la somme des n premiers termes de la suite.
+:param n: Nombre de termes à sommer.
+:return: Somme des termes de 0 à n inclus.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Suite.Suite.term">
+<span class="sig-name descname"><span class="pre">term</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Suite.html#Suite.term"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Suite.Suite.term" title="Link to this definition">¶</a></dt>
+<dd><p>Calcule le terme u_n de la suite.
+:param n: Indice du terme (doit être un entier non négatif).
+:return: Valeur du terme u_n.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.Vecteur">
+<span id="mathlib-vecteur-module"></span><h2>mathLib.Vecteur module<a class="headerlink" href="#module-mathLib.Vecteur" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mathLib.Vecteur.</span></span><span class="sig-name descname"><span class="pre">Vecteur</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>)</p></li>
+<li><p><strong>y</strong> (<em>float</em>)</p></li>
+<li><p><strong>z</strong> (<em>float</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__add__">
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__add__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__add__" title="Link to this definition">¶</a></dt>
+<dd><p>Add two vectors.
+:param other: The vector to add.
+:type other: Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting vector after addition.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Vecteur.Vecteur" title="mathLib.Vecteur.Vecteur">Vecteur</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">+</span> <span class="n">v2</span>  <span class="c1"># Results in Vecteur(4, 6)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__dict__">
+<span class="sig-name descname"><span class="pre">__dict__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">mappingproxy({'__module__':</span> <span class="pre">'mathLib.Vecteur',</span> <span class="pre">'__firstlineno__':</span> <span class="pre">8,</span> <span class="pre">'__init__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__init__&gt;,</span> <span class="pre">'__add__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__add__&gt;,</span> <span class="pre">'__sub__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__sub__&gt;,</span> <span class="pre">'__mul__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__mul__&gt;,</span> <span class="pre">'__truediv__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__truediv__&gt;,</span> <span class="pre">'cross':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.cross&gt;,</span> <span class="pre">'norm':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.norm&gt;,</span> <span class="pre">'normalize':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.normalize&gt;,</span> <span class="pre">'__eq__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__eq__&gt;,</span> <span class="pre">'__neg__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__neg__&gt;,</span> <span class="pre">'__repr__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__repr__&gt;,</span> <span class="pre">'__str__':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.__str__&gt;,</span> <span class="pre">'plot':</span> <span class="pre">&lt;function</span> <span class="pre">Vecteur.plot&gt;,</span> <span class="pre">'__static_attributes__':</span> <span class="pre">('name',</span> <span class="pre">'x',</span> <span class="pre">'y',</span> <span class="pre">'z'),</span> <span class="pre">'__dict__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__dict__'</span> <span class="pre">of</span> <span class="pre">'Vecteur'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__weakref__':</span> <span class="pre">&lt;attribute</span> <span class="pre">'__weakref__'</span> <span class="pre">of</span> <span class="pre">'Vecteur'</span> <span class="pre">objects&gt;,</span> <span class="pre">'__doc__':</span> <span class="pre">None,</span> <span class="pre">'__hash__':</span> <span class="pre">None,</span> <span class="pre">'__annotations__':</span> <span class="pre">{}})</span></em><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__dict__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__eq__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__eq__" title="Link to this definition">¶</a></dt>
+<dd><p>Check if two vectors are equal.
+:param other: The vector to compare with.
+:type other: Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the vectors are equal, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">are_equal</span> <span class="o">=</span> <span class="p">(</span><span class="n">v1</span> <span class="o">==</span> <span class="n">v2</span><span class="p">)</span>  <span class="c1"># Results in True</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__firstlineno__">
+<span class="sig-name descname"><span class="pre">__firstlineno__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__firstlineno__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__hash__">
+<span class="sig-name descname"><span class="pre">__hash__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__hash__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__init__" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a Vecteur instance.
+:param x: The x component of the vector.
+:type x: float
+:param y: The y component of the vector.
+:type y: float
+:param z: The z component of the vector. Defaults to 0.0 for 2D vectors.
+:type z: float, optional
+:param name: An optional name for the vector.
+:type name: str, optional</p>
+<dl class="simple">
+<dt>Usage:</dt><dd><p>v = Vecteur(1, 2, 3, name=”v1”) # Creates a 3D vector with components (1, 2, 3) and name “v1”</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>)</p></li>
+<li><p><strong>y</strong> (<em>float</em>)</p></li>
+<li><p><strong>z</strong> (<em>float</em>)</p></li>
+<li><p><strong>name</strong> (<em>str</em>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__module__">
+<span class="sig-name descname"><span class="pre">__module__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mathLib.Vecteur'</span></em><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__module__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__mul__">
+<span class="sig-name descname"><span class="pre">__mul__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__mul__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__mul__" title="Link to this definition">¶</a></dt>
+<dd><p>Multiply the vector by a scalar or compute the dot product with another vector.
+:param other: The scalar to multiply by or the vector for dot product.
+:type other: float or Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting vector after scalar multiplication or the dot product result.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Vecteur.Vecteur" title="mathLib.Vecteur.Vecteur">Vecteur</a> or float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__neg__">
+<span class="sig-name descname"><span class="pre">__neg__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__neg__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__neg__" title="Link to this definition">¶</a></dt>
+<dd><p>Negate the vector.
+:returns: The negated vector.
+:rtype: Vecteur</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">v_negated</span> <span class="o">=</span> <span class="o">-</span><span class="n">v</span>  <span class="c1"># Results in Vecteur(-1, 2, -3)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__repr__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__repr__" title="Link to this definition">¶</a></dt>
+<dd><p>Official string representation of the Vecteur.
+:returns: The string representation of the vector.
+:rtype: str</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">repr_str</span> <span class="o">=</span> <span class="nb">repr</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># Results in &quot;Vecteur(1, 2, 3)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__static_attributes__">
+<span class="sig-name descname"><span class="pre">__static_attributes__</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('name',</span> <span class="pre">'x',</span> <span class="pre">'y',</span> <span class="pre">'z')</span></em><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__static_attributes__" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__str__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__str__" title="Link to this definition">¶</a></dt>
+<dd><p>Informal string representation of the Vecteur.
+:returns: The string representation of the vector.
+:rtype: str</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">str_str</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>  <span class="c1"># Results in &quot;(1, 2, 3)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__sub__">
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__sub__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__sub__" title="Link to this definition">¶</a></dt>
+<dd><p>Subtract two vectors.
+:param other: The vector to subtract.
+:type other: Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting vector after subtraction.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Vecteur.Vecteur" title="mathLib.Vecteur.Vecteur">Vecteur</a></p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">-</span> <span class="n">v2</span>  <span class="c1"># Results in Vecteur(3, 3, 3)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__truediv__">
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.__truediv__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__truediv__" title="Link to this definition">¶</a></dt>
+<dd><p>Divide the vector by a scalar.
+:param other: The scalar to divide by.
+:type other: float</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting vector after division.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Vecteur.Vecteur" title="mathLib.Vecteur.Vecteur">Vecteur</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ZeroDivisionError</strong> – If division by zero is attempted.</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">v_divided</span> <span class="o">=</span> <span class="n">v</span> <span class="o">/</span> <span class="mi">2</span>  <span class="c1"># Results in Vecteur(1, 2, 3)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.__weakref__">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span><a class="headerlink" href="#mathLib.Vecteur.Vecteur.__weakref__" title="Link to this definition">¶</a></dt>
+<dd><p>list of weak references to the object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.cross">
+<span class="sig-name descname"><span class="pre">cross</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.cross"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.cross" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the cross product of two vectors.
+:param other: The vector to compute the cross product with.
+:type other: Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The resulting vector after the cross product.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#mathLib.Vecteur.Vecteur" title="mathLib.Vecteur.Vecteur">Vecteur</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>TypeError</strong> – If the other operand is not a Vecteur.</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">v3</span> <span class="o">=</span> <span class="n">v1</span><span class="o">.</span><span class="n">cross</span><span class="p">(</span><span class="n">v2</span><span class="p">)</span>  <span class="c1"># Results in Vecteur(0, 0, 1)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.norm">
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.norm" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the norm (magnitude) of the vector.
+:returns: The norm of the vector.
+:rtype: float</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">magnitude</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">norm</span><span class="p">()</span>  <span class="c1"># Results in 5.0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.normalize">
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.normalize" title="Link to this definition">¶</a></dt>
+<dd><p>Normalize the vector (make it a unit vector).
+:returns: The normalized vector.
+:rtype: Vecteur</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If attempting to normalize a zero vector.</p>
+</dd>
+</dl>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">v_normalized</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">normalize</span><span class="p">()</span>  <span class="c1"># Results in Vecteur(0.6, 0.8, 0.0)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="mathLib.Vecteur.Vecteur.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'b'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/Vecteur.html#Vecteur.plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.Vecteur.Vecteur.plot" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the vector using matplotlib.
+:param plt: The matplotlib.pyplot module.
+:param origin: The origin point from which to plot the vector.
+:type origin: tuple
+:param color: The color of the vector in the plot.
+:type color: str
+:param label: An optional label for the vector.
+:type label: str, optional</p>
+<dl>
+<dt>Usage:</dt><dd><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span> <span class="o">=</span> <span class="n">Vecteur</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">v</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">plt</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;v1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-mathLib.decorators">
+<span id="mathlib-decorators-module"></span><h2>mathLib.decorators module<a class="headerlink" href="#module-mathLib.decorators" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mathLib.decorators.process_input">
+<span class="sig-prename descclassname"><span class="pre">mathLib.decorators.</span></span><span class="sig-name descname"><span class="pre">process_input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/decorators.html#process_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.decorators.process_input" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="mathLib.decorators.time_logger">
+<span class="sig-prename descclassname"><span class="pre">mathLib.decorators.</span></span><span class="sig-name descname"><span class="pre">time_logger</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/mathLib/decorators.html#time_logger"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#mathLib.decorators.time_logger" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="mathlib-mainpca-module">
+<h2>mathLib.mainPCA module<a class="headerlink" href="#mathlib-mainpca-module" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-mathLib.testRich">
+<span id="mathlib-testrich-module"></span><h2>mathLib.testRich module<a class="headerlink" href="#module-mathLib.testRich" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-mathLib">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-mathLib" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">mathLib package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Complexe">mathLib.Complexe module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Complexe.Complexe"><code class="docutils literal notranslate"><span class="pre">Complexe</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Fonction">mathLib.Fonction module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Fonction.Fonction"><code class="docutils literal notranslate"><span class="pre">Fonction</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Matrice">mathLib.Matrice module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Matrice.Matrice"><code class="docutils literal notranslate"><span class="pre">Matrice</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.PCA">mathLib.PCA module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.PCA.PCA"><code class="docutils literal notranslate"><span class="pre">PCA</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Point">mathLib.Point module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Point.Point"><code class="docutils literal notranslate"><span class="pre">Point</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Polynome">mathLib.Polynome module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Polynome.Polynome"><code class="docutils literal notranslate"><span class="pre">Polynome</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Suite">mathLib.Suite module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Suite.Suite"><code class="docutils literal notranslate"><span class="pre">Suite</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.Vecteur">mathLib.Vecteur module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.Vecteur.Vecteur"><code class="docutils literal notranslate"><span class="pre">Vecteur</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.decorators">mathLib.decorators module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.decorators.process_input"><code class="docutils literal notranslate"><span class="pre">process_input()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mathLib.decorators.time_logger"><code class="docutils literal notranslate"><span class="pre">time_logger()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mathlib-mainpca-module">mathLib.mainPCA module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib.testRich">mathLib.testRich module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-mathLib">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="exoTSTMG.html" title="previous chapter">exoTSTMG module</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">GenExoV2</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/mathLib.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

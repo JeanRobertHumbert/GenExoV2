@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>genPreview &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <script src="../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for genPreview</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">exo1STMG</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="generate_exercise_thumbnail">
+<a class="viewcode-back" href="../genPreview.html#genPreview.generate_exercise_thumbnail">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_exercise_thumbnail</span><span class="p">(</span><span class="n">latex_code</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">output_dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;exo_preview&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compile un exercice LaTeX (TikZ inclus) en miniature PNG.</span>
+<span class="sd">    Nécessite : pdflatex + ImageMagick (&#39;magick&#39; ou &#39;convert&#39;) installés.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">output_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">output_dir</span><span class="p">)</span>
+    <span class="n">output_path</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="c1"># Fichier temporaire LaTeX minimal (classe standalone = idéal pour les extraits TikZ)</span>
+    <span class="n">tex_content</span> <span class="o">=</span> <span class="sa">rf</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">\documentclass[border=2pt]</span><span class="se">{{</span><span class="s2">standalone</span><span class="se">}}</span>
+<span class="s2">\usepackage</span><span class="se">{{</span><span class="s2">amsmath,amssymb,tikz,pgfplots,array</span><span class="se">}}</span>
+<span class="s2">\pgfplotsset</span><span class="se">{{</span><span class="s2">compat=newest</span><span class="se">}}</span>
+<span class="s2">\begin</span><span class="se">{{</span><span class="s2">document</span><span class="se">}}</span>
+<span class="si">{</span><span class="n">latex_code</span><span class="si">}</span>
+<span class="s2">\end</span><span class="se">{{</span><span class="s2">document</span><span class="se">}}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+    <span class="n">tex_file</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.tex&quot;</span>
+    <span class="n">pdf_file</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.pdf&quot;</span>
+    <span class="n">png_file</span> <span class="o">=</span> <span class="n">output_path</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.png&quot;</span>
+
+    <span class="n">tex_file</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">tex_content</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Compilation silencieuse</span>
+    <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+        <span class="p">[</span><span class="s2">&quot;pdflatex&quot;</span><span class="p">,</span> <span class="s2">&quot;-interaction=nonstopmode&quot;</span><span class="p">,</span> <span class="n">tex_file</span><span class="o">.</span><span class="n">name</span><span class="p">],</span>
+        <span class="n">cwd</span><span class="o">=</span><span class="n">output_path</span><span class="p">,</span>
+        <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)</span>
+    <span class="c1"># print(proc.stdout)</span>
+    <span class="c1"># print(proc.stderr)</span>
+
+    <span class="c1"># Conversion du PDF en miniature PNG</span>
+    <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span>
+        <span class="s2">&quot;magick&quot;</span><span class="p">,</span> <span class="c1">#&quot;convert&quot;,</span>
+        <span class="s2">&quot;-density&quot;</span><span class="p">,</span> <span class="s2">&quot;200&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">pdf_file</span><span class="p">),</span>
+        <span class="s2">&quot;-resize&quot;</span><span class="p">,</span> <span class="s2">&quot;40%&quot;</span><span class="p">,</span> <span class="s2">&quot;-quality&quot;</span><span class="p">,</span> <span class="s2">&quot;90&quot;</span><span class="p">,</span>
+        <span class="nb">str</span><span class="p">(</span><span class="n">png_file</span><span class="p">)</span>
+    <span class="p">],</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Miniature générée : </span><span class="si">{</span><span class="n">png_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">png_file</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">exercice</span> <span class="o">=</span> <span class="s2">&quot;exoP1Type10&quot;</span>
+    <span class="n">exo</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">exercice</span><span class="si">}</span><span class="s2">()&quot;</span><span class="p">)</span>
+    <span class="n">generate_exercise_thumbnail</span><span class="p">(</span><span class="n">exo</span><span class="p">,</span> <span class="s2">&quot;/Users/jrh/Documents/00-PyDev/GenExoV2/tmp&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">exercice</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mathLib.html">mathLib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

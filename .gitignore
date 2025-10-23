@@ -1,0 +1,37 @@
+# --- Données sensibles ---
+csv/209.csv
+csv/1STMG1.csv
+csv/1STMG2.csv
+csv/TSTMG1.csv
+csv/TSTMG2.csv
+pdf/*.pdf
+# Garder une notice éventuelle :
+!csv/README.md
+
+# --- Artefacts LaTeX / PDF ---
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+pdf/**/*.pdf
+pdf/*.pdf
+*.tex
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+.envrc
+
+# --- macOS ---
+.DS_Store

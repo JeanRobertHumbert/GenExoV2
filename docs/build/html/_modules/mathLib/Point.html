@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mathLib.Point &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for mathLib.Point</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="Point">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Point.Point">[docs]</a>
+<span></span><span class="k">class</span><span class="w"> </span><span class="nc">Point</span><span class="p">():</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        
+<div class="viewcode-block" id="Point.__str__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Point.Point.__str__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2">( </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> ; </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> )&quot;</span></div>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__format__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">format_spec</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+        <span class="k">match</span> <span class="n">format_spec</span><span class="p">:</span>
+            <span class="c1"># You should add this new command in your document context definition</span>
+            <span class="c1"># for a correct compilation of LaTeX functions.</span>
+            <span class="c1"># \newcommand{\vect}[1]{\overrightarrow{\,\mathstrut#1\,}}</span>
+            <span class="k">case</span> <span class="s1">&#39;Latexnom&#39;</span><span class="p">:</span>
+                <span class="k">return</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">case</span> <span class="s1">&#39;Latex2DV&#39;</span><span class="p">:</span>
+                <span class="k">return</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\begin</span><span class="si">{pmatrix}</span><span class="s2"> &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; \\ &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; \end</span><span class="si">{pmatrix}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">case</span> <span class="s1">&#39;Latex2DH&#39;</span><span class="p">:</span>
+                <span class="k">return</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\left(&quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; ; &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\right)&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">case</span> <span class="s1">&#39;Latex3DV&#39;</span><span class="p">:</span>
+                <span class="k">return</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\begin</span><span class="si">{pmatrix}</span><span class="s2"> &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; \\ &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; \\ &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; \end</span><span class="si">{pmatrix}</span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">case</span> <span class="s1">&#39;Latex3DH&#39;</span><span class="p">:</span>
+                <span class="k">return</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;&quot;&quot;&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\left(&quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; ; &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot; ; &quot;&quot;&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="sa">r</span><span class="s2">&quot;&quot;&quot;\right)&quot;&quot;&quot;</span><span class="p">)</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Unknow format specifier -&gt;</span><span class="si">{</span><span class="n">format_spec</span><span class="si">}</span><span class="s1">...&#39;</span><span class="p">)</span></div>
+
+    
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">A</span><span class="si">:</span><span class="s2">Latex2DV</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathLib.html">mathLib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

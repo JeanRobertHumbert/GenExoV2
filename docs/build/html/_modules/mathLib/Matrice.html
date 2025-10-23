@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mathLib.Matrice &#8212; GenExoV2 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for mathLib.Matrice</h1><div class="highlight"><pre>
+<span></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<div class="viewcode-block" id="Matrice">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Matrice</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Class for matrix operations including addition, subtraction,</span>
+<span class="sd">    multiplication, transposition, and determinant calculation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">data</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Toutes les lignes doivent avoir la même longueur.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<div class="viewcode-block" id="Matrice.__repr__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.__repr__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">row</span><span class="p">))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="Matrice.__add__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.__add__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Add two matrices.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Matrice): The matrix to add.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: The resulting matrix after addition.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                A = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">                B = Matrice([[5, 6], [7, 8]])</span>
+<span class="sd">                C = A + B</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If the operand is not a Matrice instance.</span>
+<span class="sd">            ValueError: If the dimensions of the matrices do not match.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Matrice</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;L&#39;opérande doit être une instance de Matrice.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">rows</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">cols</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Les dimensions des matrices doivent correspondre.&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">Matrice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.__sub__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.__sub__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Subtract two matrices.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (Matrice): The matrix to subtract.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: The resulting matrix after subtraction.</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If the operand is not a Matrice instance.</span>
+<span class="sd">            ValueError: If the dimensions of the matrices do not match.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            A = Matrice([[5, 6], [7, 8]])</span>
+<span class="sd">            B = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">            C = A - B</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Matrice</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;L&#39;opérande doit être une instance de Matrice.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">rows</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">cols</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Les dimensions des matrices doivent correspondre.&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">Matrice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.__mul__">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.__mul__">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Multiply matrix by a scalar or another matrix.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            other (int, float, Matrice): The scalar or matrix to multiply with.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: The resulting matrix after multiplication.</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            TypeError: If the operand is not a scalar or Matrice instance.</span>
+<span class="sd">            ValueError: If the dimensions are not compatible for matrix multiplication.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                A = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">                B = Matrice([[5, 6], [7, 8]])</span>
+<span class="sd">                C = A * 2</span>
+<span class="sd">                D = A * B</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">other</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="n">Matrice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Matrice</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span> <span class="o">!=</span> <span class="n">other</span><span class="o">.</span><span class="n">rows</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Le nombre de colonnes de la première matrice doit être égal au nombre de lignes de la seconde.&quot;</span><span class="p">)</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">))</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">other</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span>
+            <span class="k">return</span> <span class="n">Matrice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Multiplication supportée uniquement avec un scalaire ou une autre Matrice.&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.transpose">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.transpose">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">transpose</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Transpose the matrix.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            None</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: The transposed matrix.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                A = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">                B = A.transpose()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="p">[[</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="n">Matrice</span><span class="p">(</span><span class="n">result</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.determinant">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.determinant">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">determinant</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Calculate the determinant of the matrix.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            None</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            float: The determinant of the matrix.</span>
+<span class="sd">        Raises:</span>
+<span class="sd">            ValueError: If the matrix is not square.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                A = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">                det = A.determinant()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Le déterminant est défini uniquement pour les matrices carrées.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)),</span> <span class="mi">6</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.is_square">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.is_square">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_square</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the matrix is square.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the matrix is square, False otherwise.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                A = Matrice([[1, 2], [3, 4]])</span>
+<span class="sd">                print(A.is_square())  # True</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">cols</span></div>
+
+
+<div class="viewcode-block" id="Matrice.is_identity">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.is_identity">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_identity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the matrix is an identity matrix.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the matrix is an identity matrix, False otherwise.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                I = Matrice.identity(3)</span>
+<span class="sd">                print(I.is_identity())  # True</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_square</span><span class="p">():</span>
+            <span class="k">return</span> <span class="kc">False</span>
+        <span class="n">identity</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rows</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">identity</span></div>
+
+
+<div class="viewcode-block" id="Matrice.is_zero">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.is_zero">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_zero</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if the matrix is a zero matrix.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            bool: True if the matrix is a zero matrix, False otherwise.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                Z = Matrice.zero(3, 3)</span>
+<span class="sd">                print(Z.is_zero())  # True</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">all</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Matrice.zero">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.zero">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">zero</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create a zero matrix of given dimensions.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            rows (int): Number of rows.</span>
+<span class="sd">            cols (int): Number of columns.</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: A zero matrix of specified dimensions.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                Z = Matrice.zero(3, 3)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">([[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">cols</span><span class="p">)]</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">)])</span></div>
+
+
+<div class="viewcode-block" id="Matrice.identity">
+<a class="viewcode-back" href="../../mathLib.html#mathLib.Matrice.Matrice.identity">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">identity</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Create an identity matrix of given size.</span>
+<span class="sd">        Args:</span>
+<span class="sd">            size (int): Size of the identity matrix (size x size).</span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Matrice: An identity matrix of specified size.</span>
+<span class="sd">        Usage:</span>
+<span class="sd">            .. code-block:: python</span>
+<span class="sd">            </span>
+<span class="sd">                I = Matrice.identity(3)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">([[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="n">j</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">size</span><span class="p">)])</span></div>
+</div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1"># Exemple d&#39;usage</span>
+
+    <span class="c1"># Création de matrices</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+    <span class="n">B</span> <span class="o">=</span> <span class="n">Matrice</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Matrice A :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matrice B :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+
+    <span class="c1"># Addition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A + B :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span>
+
+    <span class="c1"># Soustraction</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A - B :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span>
+
+    <span class="c1"># Multiplication par un scalaire</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A * 3 :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="c1"># Multiplication de matrices</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A * B :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span> <span class="o">*</span> <span class="n">B</span><span class="p">)</span>
+
+    <span class="c1"># Transposition</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Transpose(A) :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">transpose</span><span class="p">())</span>
+
+    <span class="c1"># Déterminant</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Det(A) :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="o">.</span><span class="n">determinant</span><span class="p">())</span>
+
+    <span class="c1"># Matrice identité</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">identity</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matrice identité 3x3 :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>
+
+    <span class="c1"># Vérification identité</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I est une matrice identité :&quot;</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">is_identity</span><span class="p">())</span>
+
+    <span class="c1"># Création d&#39;une matrice nulle</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">Matrice</span><span class="o">.</span><span class="n">zero</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Matrice nulle 3x3 :&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">Z</span><span class="p">)</span>
+
+    <span class="c1"># Vérification matrice nulle</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Z est une matrice nulle :&quot;</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">is_zero</span><span class="p">())</span>
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">GenExoV2</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../baseMaths.html">baseMaths module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exam.html">exam module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo2GT.html">exo2GT module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exo1STMG.html">exo1STMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../exoTSTMG.html">exoTSTMG module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mathLib.html">mathLib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">GenExoV2</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  <li><a href="../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Jean-Robert Humbert.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
