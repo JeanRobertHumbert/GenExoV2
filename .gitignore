@@ -1,0 +1,67 @@
+# --- Données sensibles ---
+csv/209.csv
+csv/1STMG1.csv
+csv/1STMG2.csv
+csv/TSTMG1.csv
+csv/TSTMG2.csv
+pdf/*.pdf
+# Garder une notice éventuelle :
+!csv/README.md
+
+# --- Artefacts LaTeX / PDF ---
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+pdf/**/*.pdf
+pdf/*.pdf
+*.tex
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+.envrc
+.pytest_cache/
+
+# --- Générations éphémères ---
+outputs/*.pdf
+outputs/*.zip
+outputs/runs/
+
+# --- Documentation générée (Sphinx) ---
+docs/build/
+build/
+
+# --- Guide utilisateur (regénérable via generate_guide.py) ---
+guide_utilisateur.md
+guide/
+
+# --- Django ---
+*.sqlite3
+*.sqlite3-journal
+.env
+staticfiles/
+mediafiles/
+
+# --- macOS ---
+.DS_Store
+**/.DS_Store
+
+# Données personnelles et fichiers lourds (ajouté lors de la prep SofEduc)
+csv/ENT.csv
+csv/fr-en-annuaire-education.csv
+test_write.tmp
+pensebete.txt
+Synthèses Première/
+site/
